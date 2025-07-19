@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xetsue</title>
+    <style>
+        :root {
+            --text-color: #ffffff;
+            --bg-color: #000000;
+            --border-color: #4a403f;
+            --secondary-text-color: #bbbbbb;
+            --footer-text-color: #555555;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'Monospace', monospace;
+            margin: 0;
+            padding: 15px;
+            text-align: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .no-select {
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+
+        .ascii-banner {
+            border: 1px solid #A9A9A9;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 15px auto;
+            max-width: 1200px;
+            overflow-x: auto;
+        }
+
+        .ascii-art {
+            font-size: 12px;
+            line-height: 1.2;
+            white-space: pre;
+            text-align: center;
+            margin: 0;
+        }
+
+        .description-box {
+            border: 1px solid var(--border-color);
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px auto;
+            max-width: 1200px;
+            text-align: left;
+            text-align: justify;
+            cursor: pointer;
+            height: 60px; /* Fixed height */
+            overflow: hidden; /* Hide overflow during animation */
+        }
+
+        #description-text {
+            font-size: 13px;
+            display: inline-block;
+            font-family: 'Monospace', monospace;
+            margin: 0;
+        }
+        
+        .typing::after {
+            content: '▋';
+            animation: blink 1s step-end infinite;
+        }
+        
+        @keyframes blink {
+            from, to { color: transparent; }
+            50% { color: var(--text-color); }
+        }
+        
+        .secondary-description-box {
+            border: 1px solid #a9a9a9;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px auto;
+            max-width: 1200px;
+            text-align: center;
+            font-size: 13px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px auto;
+            max-width: 1200px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .grid-item {
+            border: 1px solid #A9A9A9;
+            border-radius: 25px;
+            padding: 15px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.3s ease;
+            min-height: 20px;
+            aspect-ratio: auto;
+        }
+
+        .grid-item.expanded {
+            aspect-ratio: auto;
+            min-height: auto;
+        }
+
+        .item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .item-header a {
+            color: var(--text-color);
+            text-decoration: underline;
+            font-weight: none;
+            font-size: 1.05em;
+        }
+        .item-header a:hover {
+            text-decoration: underline;
+        }
+
+        .toggle-btn {
+            background: none;
+            border: none;
+            color: var(--text-color);
+            font-size: 1.1em;
+            cursor: pointer;
+            padding: 0 5px;
+            -webkit-tap-highlight-color: transparent;
+        }
+        
+        .item-description {
+            display: none;
+            margin-top: 10px;
+            color: var(--secondary-text-color);
+            font-size: 0.9em;
+        }
+
+        .footer {
+            margin-top: 30px;
+        }
+
+        .footer a {
+            color: var(--footer-text-color);
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .footer a:hover {
+            color: var(--secondary-text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ascii-banner">
+        <pre class="ascii-art no-select">
+ __  __      _____     __  __
+/\_\_\_\   /\  ___\   /\ \/\ \
+\/_/\_\/_  \ \___  \  \ \ \_\ \
+  /\_\/\_\  \/\_____\  \ \_____\
+      \/_/\/_/   \/_____/   \/_____/ .exe
+        </pre>
+    </div>
+
+    <div class="description-box">
+        <p id="description-text"></p>
+    </div>
+
+    <div class="secondary-description-box">
+        <p>Xetsu Hub Archives</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="item-header">
+                <a href="https://github.com/xetsue?tab=repositories" target="_blank">Github</a>
+                <button class="toggle-btn" aria-label="Toggle description">•••</button>
+            </div>
+            <div class="item-description">
+                <p>Tsu Github's Repository Page</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="item-header">
+                <a href="https://ko-fi.com/xetsu" target="_blank">ko-fi</a>
+                <button class="toggle-btn" aria-label="Toggle description">•••</button>
+            </div>
+            <div class="item-description">
+                <p>If you like these, I'd appreciate even the tiniest cup of coffee ☕</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="item-header">
+                <a href="https://xetsue.github.io/AXECII/" target="_blank">Axecii</a>
+                <button class="toggle-btn" aria-label="Toggle description">•••</button>
+            </div>
+            <div class="item-description">
+                <p>ASCII Art Generator with privacy focused. Zero Data Collection.</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="item-header">
+                <a href="https://ko-fi.com/xetsu" target="_blank">Project 4</a>
+                <button class="toggle-btn" aria-label="Toggle description">•••</button>
+            </div>
+            <div class="item-description">
+                <p>coming soon</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="item-header">
+                <a href="https://ko-fi.com/xetsu" target="_blank">Project 5</a>
+                <button class="toggle-btn" aria-label="Toggle description">•••</button>
+            </div>
+            <div class="item-description">
+                <p>coming soon</p>
+            </div>
+        </div>
+
+        <div class="grid-item">
+            <div class="item-header">
+                <a href="https://ko-fi.com/xetsu" target="_blank">Project 6</a>
+                <button class="toggle-btn" aria-label="Toggle description">•••</button>
+            </div>
+            <div class="item-description">
+                <p>coming soon</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">⋯ ⋱ ⋮ ⋰ ⋯</a>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const textElement = document.getElementById('description-text');
+            const textToType = "Poems came into existence in every timeline once they heard your name echoed through the fabric of reality.";
+            let charIndex = 0;
+
+            function typeWriter() {
+                if (charIndex < textToType.length) {
+                    textElement.textContent += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(typeWriter, 40);
+                } else {
+                    textElement.classList.remove('typing');
+                    // Adjust height after animation completes
+                    document.querySelector('.description-box').style.height = 'auto';
+                }
+            }
+
+            if (!sessionStorage.getItem('hasTyped')) {
+                textElement.classList.add('typing');
+                typeWriter();
+                sessionStorage.setItem('hasTyped', 'true');
+            } else {
+                textElement.textContent = textToType;
+                document.querySelector('.description-box').style.height = 'auto';
+            }
+
+            const fonts = [
+                "'Monospace', monospace, monospace",
+                "'Courier New', Courier, monospace",
+                "'Times New Roman', Times, serif",
+                "'Trebuchet MS', sans-serif",
+                "Georgia, serif"
+            ];
+            let currentFont = 0;
+
+            document.querySelector('.description-box').addEventListener('click', function() {
+                currentFont = (currentFont + 1) % fonts.length;
+                document.getElementById('description-text').style.fontFamily = fonts[currentFont];
+            });
+
+            document.querySelectorAll('.toggle-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const gridItem = button.closest('.grid-item');
+                    const description = gridItem.querySelector('.item-description');
+                    
+                    const isExpanding = description.style.display !== 'block';
+                    
+                    if (isExpanding) {
+                        const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                        gridItem.style.borderColor = randomColor;
+                        gridItem.classList.add('expanded');
+                        description.style.display = 'block';
+                    } else {
+                        gridItem.style.borderColor = '';
+                        gridItem.classList.remove('expanded');
+                        description.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
