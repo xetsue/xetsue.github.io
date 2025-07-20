@@ -1,4 +1,4 @@
-const randomDescripclicks= [
+const randomDescriptions = [
     "Poems came into existence in every timeline once they heard your name echoed through the very fabric of reality.",
     "The @ symbol in email addresses was chosen by Ray Tomlinson in 1971 to separate user from host.",
     "Honey never spoils. Archaeologists have found edible honey in ancient Egyptian tombs.",
@@ -17,7 +17,7 @@ const randomDescripclicks= [
     "The total weight of all ants on Earth is about equal to the total weight of all humans.",
     "Octopuses have three hearts, nine brains, and blue blood.",
     "Some say if you toggle the theme enough times, you might discover something... unexpected.",
-    "Quick taps on a celestial body or the stars bring hidden tricks, but only if you're fast enough.",
+    "Quick clicks bring hidden tricks, but only if you're fast enough.",
     "The most interesting things often require patience and persistence to uncover."
 ];
 
@@ -109,10 +109,9 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             const gridItem = button.closest('.grid-item');
             const description = gridItem.querySelector('.item-description');
+            const isExpanded = !description.classList.contains('expanded');
             
-            const isExpanding = !description.classList.contains('expanded');
-            
-            if (isExpanding) {
+            if (isExpanded) {
                 const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
                 gridItem.style.borderColor = randomColor;
                 description.classList.add('expanded');
@@ -131,16 +130,12 @@ document.addEventListener('DOMContentLoaded', function() {
                      (prefersDarkScheme.matches ? 'dark' : 'light');
 
     function updateThemeToggleSymbol() {
-        if (currentTheme === 'dark') {
-            themeToggle.innerHTML = '<span class="sun-symbol">☀</span>'; 
-        } else {
-            themeToggle.innerHTML = '☾';
-        }
+        themeToggle.innerHTML = currentTheme === 'dark' ? '<span class="sun-symbol">☀</span>' : '☾';
     }
 
     function applyTheme() {
         document.documentElement.setAttribute('data-theme', currentTheme);
-        updateThemeToggleSymbol(); 
+        updateThemeToggleSymbol();
         localStorage.setItem('theme', currentTheme);
     }
 
@@ -233,9 +228,7 @@ document.addEventListener('DOMContentLoaded', function() {
             item.addEventListener('mouseenter', expandOnHover);
             item.addEventListener('mouseleave', collapseOnHoverOut);
 
-            const toggleBtn = item.querySelector('.toggle-btn');
-            toggleBtn.removeEventListener('click', (e) => { }); 
-            toggleBtn.addEventListener('click', (e) => {
+            item.querySelector('.toggle-btn').addEventListener('click', (e) => {
                 e.stopPropagation();
                 const description = item.querySelector('.item-description');
                 
@@ -254,7 +247,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     let buttonPosition = 'right';
-
     themeToggleContainer.classList.add('right-pos');
 
     const leftCornerBtn = document.getElementById('leftCornerBtn');
@@ -294,7 +286,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 themeToggleContainer.removeEventListener('animationend', handleInAnimationEnd);
             };
             themeToggleContainer.addEventListener('animationend', handleInAnimationEnd, { once: true });
-
 
         } else if (targetDirection === 'right') {
             themeToggleContainer.classList.add('animate-out-left');
