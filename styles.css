@@ -21,7 +21,7 @@
 [data-theme="light"] {
     --text-color: #000000;
     --bg-color: #ffffff;
-    --border-color: #d3d3d3;
+    --border-color: #2e2e2e;
     --secondary-text-color: #555555;
     --footer-text-color: #bbbbbb;
     --grid-item-bg: #f5f5f5;
@@ -60,6 +60,7 @@ body {
     margin: 15px auto;
     max-width: 1200px;
     overflow-x: auto;
+    text-decoration: bold;
 }
 
 .ascii-art {
