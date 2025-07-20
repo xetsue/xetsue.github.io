@@ -18,8 +18,21 @@ const randomDescriptions = [
     "Octopuses have three hearts, nine brains, and blue blood.",
     "Some say if you toggle the theme enough times, you might discover something... unexpected.",
     "Quick clicks bring hidden tricks, but only if you're fast enough.",
-    "The most interesting things often require patience and persistence to uncover."
+    "The most interesting things often require patience and persistence to uncover.",
+    "There are more possible iterations of a game of chess than atoms in the known universe.",
+    "A jiffy is an actual unit of time: 1/100th of a second.",
+    "The shortest war in history was between Britain and Zanzibar in 1896, lasting only 38 minutes.",
+    "Cows don't have upper front teeth.",
+    "It is impossible for most people to lick their own elbow.",
+    "The average person walks the equivalent of three times around the world in their lifetime.",
+    "Butterflies taste with their feet.",
+    "In the silent hum of wires, a million thoughts take flight, woven through the vast expanse of digital light.",
+    "Where algorithms dance and data streams align, a boundless realm of knowledge, forever intertwined.",
+    "From humble clicks to grand design, the web connects us, spanning space and time.",
+    "Like whispered secrets on a global breeze, ideas traverse the net with effortless ease.",
+    "A digital tapestry, where every thread holds a tale, in the endless loom of cyberspace, we prevail."
 ];
+
 
 const catFrames = [
     String.raw`____________________________________
