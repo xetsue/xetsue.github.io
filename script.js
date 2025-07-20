@@ -130,7 +130,11 @@ document.addEventListener('DOMContentLoaded', function() {
                      (prefersDarkScheme.matches ? 'dark' : 'light');
 
     function updateThemeToggleSymbol() {
-        themeToggle.innerHTML = currentTheme === 'dark' ? '<span class="sun-symbol">☀</span>' : '☾';
+        if (currentTheme === 'dark') {
+            themeToggle.innerHTML = '<img src="/docs/assets/G2V.png" alt="Sun symbol" style="width: 80px; height: 80px;">';                     
+        } else {
+            themeToggle.innerHTML = '☾';
+        }
     }
 
     function applyTheme() {
