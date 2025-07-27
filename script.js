@@ -1,4 +1,6 @@
 const randomDescriptions = [
+    "Tapping Left-corner of the screen moves the theme button. Left handed users should enjoy too.",
+    "My projects aim to respect User's Privacy at all time.",
     "Poems came into existence in every timeline once they heard your name echoed through the very fabric of reality.",
     "The @ symbol in email addresses was chosen by Ray Tomlinson in 1971 to separate user from host.",
     "Honey never spoils. Archaeologists have found edible honey in ancient Egyptian tombs.",
