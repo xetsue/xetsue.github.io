@@ -40,6 +40,13 @@ const hubArchiveSecrets = [
     "Every project here started with a single thought: 'What if?'",
 	"Pressing the theme button 6 times summons me and my thoughts. While another 3, will send me away.",
     "Behind these links are stories of bugs, breakthroughs, and the joy of creation.",
+	"Why? Because sometimes it only takes one yes for a million breakthrough.",
+	"Must have been the wind.",
+	"My Wife is alwaus in the vicinity of my thoughts.",
+	"Elxi? That sounds like a great name for my next cat."
+	"I added fun facts for one out of two people will leave this place with a new knowledge." 
+	"6-3-3 each of its own actions.",
+	"Left-handed Users aren't missing out, tapping left corner even moves the theme button.",
     "A digital garden, where ideas are planted and allowed to grow. Welcome."
 ];
 
@@ -394,11 +401,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     document.querySelector('.secondary-description-box').addEventListener('click', () => {
-        if (window.matchMedia("(max-width: 768px)").matches) {
-            const randomIndex = Math.floor(Math.random() * hubArchiveSecrets.length);
-            const secretMessage = hubArchiveSecrets[randomIndex];
-            showMiniPanel(`<p>${secretMessage}</p>`);
-        }
+		const randomIndex = Math.floor(Math.random() * hubArchiveSecrets.length);
+		const secretMessage = hubArchiveSecrets[randomIndex];
+		showMiniPanel(`<p>${secretMessage}</p>`);
     });
 
     document.querySelectorAll('.item-header').forEach(header => {
