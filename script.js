@@ -44,7 +44,7 @@ const hubArchiveSecrets = [
 	"Must have been the wind.",
 	"My Wife is alwaus in the vicinity of my thoughts.",
 	"Elxi? That sounds like a great name for my next cat.",
-	"I added fun facts for one out of two people will leave this place with a new knowledge.",
+	"I added fun facts for one out of two people will leave this place with a new knowledge." ,
 	"6-3-3 each of its own actions.",
 	"Left-handed Users aren't missing out, tapping left corner even moves the theme button.",
     "A digital garden, where ideas are planted and allowed to grow. Welcome."
@@ -405,7 +405,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		const secretMessage = hubArchiveSecrets[randomIndex];
 		showMiniPanel(`<p>${secretMessage}</p>`);
     });
-
+	
     document.querySelectorAll('.item-header').forEach(header => {
         header.addEventListener('click', (e) => {
             if (window.matchMedia("(max-width: 768px)").matches) {
