@@ -43,8 +43,8 @@ const hubArchiveSecrets = [
 	"Why? Because sometimes it only takes one yes for a million breakthrough.",
 	"Must have been the wind.",
 	"My Wife is alwaus in the vicinity of my thoughts.",
-	"Elxi? That sounds like a great name for my next cat."
-	"I added fun facts for one out of two people will leave this place with a new knowledge." 
+	"Elxi? That sounds like a great name for my next cat.",
+	"I added fun facts for one out of two people will leave this place with a new knowledge.",
 	"6-3-3 each of its own actions.",
 	"Left-handed Users aren't missing out, tapping left corner even moves the theme button.",
     "A digital garden, where ideas are planted and allowed to grow. Welcome."
