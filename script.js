@@ -131,15 +131,22 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
             const gridItem = button.closest('.grid-item');
             const description = gridItem.querySelector('.item-description');
-            const isExpanded = !description.classList.contains('expanded');
-            
-            if (isExpanded) {
-                const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-                gridItem.style.borderColor = randomColor;
-                description.classList.add('expanded');
+
+            if (!window.matchMedia("(min-width: 769px)").matches) {
+                if (description.classList.toggle('expanded')) {
+                    const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                    gridItem.style.borderColor = randomColor;
+                } else {
+                    gridItem.style.borderColor = '';
+                }
             } else {
-                gridItem.style.borderColor = '';
-                description.classList.remove('expanded');
+                const isNowExpanded = description.classList.toggle('expanded');
+                if (isNowExpanded) {
+                    gridItem.style.borderColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+                    gridItem.classList.remove('is-expanded');
+                } else {
+                    gridItem.style.borderColor = '';
+                }
             }
         });
     });
@@ -233,7 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (window.matchMedia("(min-width: 769px)").matches) {
         document.querySelectorAll('.grid-item').forEach(item => {
             const description = item.querySelector('.item-description');
-            const toggleBtn = item.querySelector('.toggle-btn');
 
             item.addEventListener('mouseenter', () => {
                 if (!description.classList.contains('expanded')) {
@@ -245,17 +251,6 @@ document.addEventListener('DOMContentLoaded', function() {
             item.addEventListener('mouseleave', () => {
                 item.classList.remove('is-expanded');
                 if (!description.classList.contains('expanded')) {
-                    item.style.borderColor = '';
-                }
-            });
-
-            toggleBtn.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const isNowExpanded = description.classList.toggle('expanded');
-                if (isNowExpanded) {
-                    item.style.borderColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-                    item.classList.remove('is-expanded');
-                } else {
                     item.style.borderColor = '';
                 }
             });
@@ -409,7 +404,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.item-header').forEach(header => {
         header.addEventListener('click', (e) => {
             if (window.matchMedia("(max-width: 768px)").matches) {
-                if (e.target === header) {
+                if (e.target.tagName !== 'A' && e.target.tagName !== 'BUTTON') { 
                     const gridItem = header.closest('.grid-item');
                     const description = gridItem.querySelector('.item-description p').innerHTML;
                     showMiniPanel(`<p>${description}</p>`);
