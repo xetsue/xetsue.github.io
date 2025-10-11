@@ -47,8 +47,11 @@ const hubArchiveSecrets = [
 	"Elxi? That sounds like a great name for my next cat.",
 	"A wedding? A wedding.",
 	"Loading...",
-	"-.././-../../-.-./.-/-/./-..//..-./---/.-.//...././.-.",
-	"I added fun facts for one out of two people will leave this place with a new knowledge." ,
+    "- ... ..-",
+    "-.-- . .- .-- -.",
+    "-.-. .-.. . .- .-.",
+	"-.. . -.. .. -.-. .- - . -.. / ..-. --- .-. / .... . .-.",
+	"Fun fact: I added fun facts." ,
 	"6-3-3 each of its own actions.",
 	"Left-handed Users aren't missing out, tapping left corner even moves the theme button.",
     "A digital garden, where ideas are planted and allowed to grow. Welcome."
